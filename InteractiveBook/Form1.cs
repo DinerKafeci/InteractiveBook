@@ -12,6 +12,7 @@ namespace InteractiveBook
 {
     public partial class Form1 : Form
     {
+        //Diner
         private PictureBox beePictureBox;
         private Timer beeTimer;
         private int centerX;
@@ -24,7 +25,7 @@ namespace InteractiveBook
         {
             InitializeComponent();
         }
-
+        //Diner
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -88,6 +89,7 @@ namespace InteractiveBook
             // Add the PictureBox to the form
             this.Controls.Add(pictureBox);
         }
+        //Diner
         private void PictureBox_Click(object sender, EventArgs e)
         {
             // Navigate to Form2 on click
@@ -97,7 +99,7 @@ namespace InteractiveBook
             // Optionally hide or close the current form
             this.Hide();
         }
-
+        //Diner
         private void Form1_Load(object sender, EventArgs e)
         {
             // Initialize the bee image
@@ -127,6 +129,7 @@ namespace InteractiveBook
             beeTimer.Tick += BeeTimer_Tick;
             beeTimer.Start();
         }
+        //Diner
         private void BeeTimer_Tick(object sender, EventArgs e)
         {
             // Increment the angle for circular movement

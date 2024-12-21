@@ -13,6 +13,7 @@ namespace InteractiveBook
 {
     public partial class Form2 : Form
     {
+        //Viktorija
         private Timer animationTimer;
         private int startX;
 
@@ -20,7 +21,7 @@ namespace InteractiveBook
         {
             InitializeComponent();
         }
-
+        //Senanur
         private void Form2_Load(object sender, EventArgs e)
         {
             rtb1.Text = "Everyone knows that every bear love honey. It is their favourite treat. One morning, Mr. Bear goes to the cupboard, feeling very hungry. He opens the door, hoping to find a big jar of honey. But… the cupboard is empty!\r\n“Oh no! No honey!” Mr. Bear says sadly, his tummy growling.\r\n    (Animation1) \n\n\n So he goes into the forest to find some. Suddenly, Mr. Bear smells something sweet. Sniff, sniff! He looks around and sees a beehive hanging on a tree. “Mmmmm! Honey!” he says, licking his lips.\r\nMr. Bear reaches out and sticks his paw into the beehive to grab some honey. But then… ZZZZZZZZ! A bee flies out, buzzing loudly.\r\n“Hey, bear! Go away!” the bee says. “This is not your honey!”\r\n    (Animation2) \n\n\n  Mr. Bear frowns. He does not like being told “no.”\r\n“I am bigger than you,” he says in a loud voice. “And I am stronger than you too! I can do what I want! Now… buzz off!”\r\nMr. Bear pushes his paw back into the hive. But this time…\r\nZZZZZZZZZ! ZING!\r\n“OWIE!” Mr. Bear shouts. The bee stings him right on his nose! Mr. Bear holds his nose with his paw. It really hurts.\r\n    (Animation3)   ";
@@ -42,7 +43,7 @@ namespace InteractiveBook
 
             rtb1.MouseClick += Rtbparagraph1_MouseClick;
         }
-
+        //Viktorija
         private void InitializeAnimation()
         {
             startX = -this.Width; // Start position off-screen
@@ -56,7 +57,7 @@ namespace InteractiveBook
             animationTimer.Tick += AnimationTimer_Tick;
             animationTimer.Start();
         }
-
+        //Viktorija
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             if (rtb1.Left >= 15) // Stop when close to final position
@@ -69,6 +70,7 @@ namespace InteractiveBook
                 rtb1.Left += 20; // Move incrementally
             }
         }
+        //Senanur
         private void Rtbparagraph1_MouseClick(object sender, MouseEventArgs e)
         {
             // Get the clicked position
@@ -138,7 +140,7 @@ namespace InteractiveBook
             }
         }
         
-
+        //Senanur
         private string GetWordAtPosition(int position)
         {
             int start = position, end = position;
@@ -153,7 +155,7 @@ namespace InteractiveBook
 
             return rtb1.Text.Substring(start, end - start);
         }
-
+        //Viktorija
         private void ShowImage(string imagePath)
         {
             Form imageForm = new Form();
@@ -161,7 +163,7 @@ namespace InteractiveBook
             {
                 Image = Image.FromFile(imagePath),
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                Size = new Size(300, 300), // Adjust the size if needed
+                Size = new Size(300, 300), 
                 Dock = DockStyle.Fill // Makes the image fit within the form
             };
 
@@ -169,6 +171,7 @@ namespace InteractiveBook
             imageForm.Text = "Image Viewer";
             imageForm.ShowDialog(); // Show the image form
         }
+        //Viktorija
         private void ShowAnimatedGif(string gifPath)
         {
             Form gifForm = new Form();
@@ -195,6 +198,8 @@ namespace InteractiveBook
             gifForm.Size = new Size(350, 350);
             gifForm.ShowDialog();
         }
+
+        //Senanur
         private void HighlightWord(string word, Color color)
         {
             int startIndex = 0;
@@ -206,6 +211,7 @@ namespace InteractiveBook
             }
         }
 
+        //Diner
         private void Form2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -249,7 +255,7 @@ namespace InteractiveBook
                     );
                 }
             }
-
+            
             PictureBox pictureBox = new PictureBox
             {
                 Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\right.png"), // Path to the icon
@@ -323,6 +329,7 @@ namespace InteractiveBook
             this.Controls.Add(pictureBox1);
 
         }
+        //Diner
         private void PictureBox_Click(object sender, EventArgs e)
         {
             // Navigate to Form2 on click
@@ -332,7 +339,7 @@ namespace InteractiveBook
             // Optionally hide or close the current form
             this.Hide();
         }
-
+        //Diner
         private void PictureBox_Click1(object sender, EventArgs e)
         {
             // Navigate to Form2 on click

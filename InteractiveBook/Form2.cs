@@ -211,7 +211,7 @@ namespace InteractiveBook
             }
         }
 
-        //Diner
+   
         private void Form2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -329,7 +329,7 @@ namespace InteractiveBook
             this.Controls.Add(pictureBox1);
 
         }
-        //Diner
+        
         private void PictureBox_Click(object sender, EventArgs e)
         {
             // Navigate to Form2 on click
@@ -339,7 +339,7 @@ namespace InteractiveBook
             // Optionally hide or close the current form
             this.Hide();
         }
-        //Diner
+        
         private void PictureBox_Click1(object sender, EventArgs e)
         {
             // Navigate to Form2 on click

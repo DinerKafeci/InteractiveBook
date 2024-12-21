@@ -12,7 +12,7 @@ namespace InteractiveBook
 {
     public partial class Form3 : Form
     {
-        //Viktorija
+        
         private Timer animationTimer;
         private int startX;
 
@@ -20,7 +20,7 @@ namespace InteractiveBook
         {
             InitializeComponent();
         }
-        //Senanur
+       
         private void Form3_Load(object sender, EventArgs e)
         {
             rtb2.Text = "Now Mr. Bear is very angry. His nose still stings. “I will show that bee!” he says.\r\nMr. Bear finds a big stick on the ground. He holds it high and swings it at the bee. Whoosh! Whoosh! But the bee is too fast. It zips left, then right, and Mr. Bear cannot hit it.\r\n“GARRRRRGH!” Mr. Bear roars. “I WILL SQUASH YOU!”\r\nThe little bee flies back into the beehive. Mr. Bear smiles a big, mean smile.\r\n“AH HAH! Now you are trapped!” he says.\r\nHe swings his stick hard at the beehive. SMASH! SMASH! SMASH! The hive breaks into pieces.\r\n    (Animation4)\n\n\n ) But then something happens. Mr. Bear hears a sound. It starts small…\r\nZZZZ! ZZZZ! ZZZZZZZZZ!\r\nThe sound gets louder and louder. Suddenly, thousands of bees fly out of the broken hive.\r\nMr. Bear’s eyes get big. “Uh oh,” he whispers.\r\nThe bees fly around his head in a big, buzzing cloud.\r\nZZZZZZZZZ… ZING!\r\n“OW!” Mr. Bear shouts as a bee stings his ear.\r\nHe turns and runs as fast as he can. The bees follow him, buzzing angrily. They chase him through the forest.\r\n    (Animation5)\n\n\n Mr. Bear runs all the way home. He jumps inside and slams the door behind him. BAM!\r\nHe leans against the door, panting and holding his stung ear. Then he hears a voice.\r\n“Did you do it again?” says Mrs. Bear. She stands there, shaking her head.\r\nMr. Bear looks down at his paws and nods. “Yes,” he says. “I lost my temper.” He sniffs as he counts his bee stings.\r\nMrs. Bear smiles kindly and hands him a jar. “Here’s the bee-sting medicine,” she says. “Oh, and by the way, we do have honey. It’s in the cupboard—behind the flour.”\r\nMr. Bear’s mouth drops open. “Behind the flour?!” he groans.\r\n    (Animation6)";
@@ -46,7 +46,7 @@ namespace InteractiveBook
 
             rtb2.MouseClick += Rtbparagraph1_MouseClick;
         }
-        //Viktorija
+        
         private void InitializeAnimation()
         {
             startX = -this.Width; // Start position off-screen
@@ -60,7 +60,7 @@ namespace InteractiveBook
             animationTimer.Tick += AnimationTimer_Tick;
             animationTimer.Start();
         }
-        //Viktorija
+        
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
             if (rtb2.Left >= 15) // Stop when close to final position
@@ -73,7 +73,7 @@ namespace InteractiveBook
                 rtb2.Left += 20; // Move incrementally
             }
         }
-        //Senanur
+        
         private void Rtbparagraph1_MouseClick(object sender, MouseEventArgs e)
         {
             // Get the clicked position
@@ -154,7 +154,7 @@ namespace InteractiveBook
                 ShowAnimatedGif(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\Animation6.gif");
             }
         }
-        //Senanur
+        
         private string GetWordAtPosition(int position)
         {
             int start = position, end = position;
@@ -169,7 +169,7 @@ namespace InteractiveBook
 
             return rtb2.Text.Substring(start, end - start);
         }
-        //Viktorija
+       
         private void ShowImage(string imagePath)
         {
             Form imageForm = new Form();
@@ -185,7 +185,7 @@ namespace InteractiveBook
             imageForm.Text = "Image Viewer";
             imageForm.ShowDialog(); // Show the image form
         }
-        //Viktorija
+        
         private void ShowAnimatedGif(string gifPath)
         {
             Form gifForm = new Form();
@@ -212,7 +212,7 @@ namespace InteractiveBook
             gifForm.Size = new Size(350, 350);
             gifForm.ShowDialog();
         }
-        //Senanur
+        
         private void HighlightWord(string word, Color color)
         {
             int startIndex = 0;
@@ -233,7 +233,7 @@ namespace InteractiveBook
                 startIndex += word.Length;
             }
         }
-        //Diner
+        
         private void Form3_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -278,7 +278,7 @@ namespace InteractiveBook
                     );
                 }
             }
-            //Diner
+            
             PictureBox pictureBox1 = new PictureBox
             {
                 Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\left-arrow.png"), // Path to the icon
@@ -296,7 +296,7 @@ namespace InteractiveBook
             // Add the PictureBox to the form
             this.Controls.Add(pictureBox1);
         }
-        //Diner
+        
         private void PictureBox_Click1(object sender, EventArgs e)
         {
             // Navigate to Form2 on click

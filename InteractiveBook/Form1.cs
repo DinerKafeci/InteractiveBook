@@ -29,7 +29,7 @@ namespace InteractiveBook
         {
             Graphics g = e.Graphics;
 
-            g.DrawImage(Bitmap.FromFile("C:\\Users\\Asus\\Downloads\\bearandbee.PNG"), new Rectangle(0, 0, this.ClientSize.Width - 50, this.ClientSize.Height));
+            g.DrawImage(Bitmap.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\bearandbee.PNG"), new Rectangle(0, 0, this.ClientSize.Width - 50, this.ClientSize.Height));
 
 
             using (Pen pen = new Pen(Color.Black))
@@ -74,7 +74,7 @@ namespace InteractiveBook
 
             PictureBox pictureBox = new PictureBox
             {
-                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\right.png"), // Path to the icon
+                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\right.png"), // Path to the icon
                 SizeMode = PictureBoxSizeMode.StretchImage, // Adjust size to fit
                 Size = new System.Drawing.Size(30, 30), // Set appropriate size for the icon
                 Location = new System.Drawing.Point(this.ClientSize.Width - 50, this.ClientSize.Height - 50), // Correct positioning
@@ -103,7 +103,7 @@ namespace InteractiveBook
             // Initialize the bee image
             beePictureBox = new PictureBox
             {
-                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\bee03.PNG"), // Path to the bee image
+                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\bee03.PNG"), // Path to the bee image
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Size = new Size(50, 50), // Set size for the bee
                 BackColor = Color.Transparent

@@ -277,7 +277,7 @@ namespace InteractiveBook
 
             PictureBox pictureBox1 = new PictureBox
             {
-                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\left-arrow.png"), // Path to the icon
+                Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\left-arrow.png"), // Path to the icon
                 SizeMode = PictureBoxSizeMode.StretchImage, // Adjust size to fit
                 Size = new System.Drawing.Size(18, 18), // Set appropriate size for the icon
                 Location = new System.Drawing.Point(25, this.ClientSize.Height - 45), // Correct positioning

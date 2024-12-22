@@ -41,7 +41,7 @@ namespace InteractiveBook
             HighlightWord("medicine", Color.Pink);
             HighlightWord("flour", Color.Pink);
 
-            rtb2.Visible = false; // Hide initially
+            rtb2.Visible = false; 
             InitializeAnimation();
 
             rtb2.MouseClick += Rtbparagraph1_MouseClick;
@@ -49,13 +49,13 @@ namespace InteractiveBook
         
         private void InitializeAnimation()
         {
-            startX = -this.Width; // Start position off-screen
+            startX = -this.Width; 
             rtb2.Left = startX;
             rtb2.Visible = true;
 
             animationTimer = new Timer
             {
-                Interval = 15 // Adjust speed
+                Interval = 15 
             };
             animationTimer.Tick += AnimationTimer_Tick;
             animationTimer.Start();
@@ -63,27 +63,25 @@ namespace InteractiveBook
         
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
-            if (rtb2.Left >= 15) // Stop when close to final position
+            if (rtb2.Left >= 15) 
             {
                 animationTimer.Stop();
-                rtb2.Left = 15; // Final position
+                rtb2.Left = 15; 
             }
             else
             {
-                rtb2.Left += 20; // Move incrementally
+                rtb2.Left += 20; 
             }
         }
         
         private void Rtbparagraph1_MouseClick(object sender, MouseEventArgs e)
         {
-            // Get the clicked position
             int clickedPosition = rtb2.GetCharIndexFromPosition(e.Location);
             rtb2.Select(clickedPosition, 1); // Select the clicked character
 
-            // Get the word at the clicked position
             string clickedWord = GetWordAtPosition(clickedPosition);
 
-            // Show corresponding image
+            
             if (clickedWord == "bear")
             {
                 ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\Screenshot 2024-12-17 190501.png");
@@ -159,11 +157,9 @@ namespace InteractiveBook
         {
             int start = position, end = position;
 
-            // Extend the start of the word to include letters and digits
             while (start > 0 && char.IsLetterOrDigit(rtb2.Text[start - 1]))
                 start--;
 
-            // Extend the end of the word to include letters and digits
             while (end < rtb2.Text.Length && char.IsLetterOrDigit(rtb2.Text[end]))
                 end++;
 
@@ -177,13 +173,13 @@ namespace InteractiveBook
             {
                 Image = Image.FromFile(imagePath),
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                Size = new Size(300, 300), // Adjust the size if needed
-                Dock = DockStyle.Fill // Makes the image fit within the form
+                Size = new Size(300, 300), 
+                Dock = DockStyle.Fill 
             };
 
-            imageForm.Controls.Add(pictureBox); // Add the picture box to the form
+            imageForm.Controls.Add(pictureBox); 
             imageForm.Text = "Image Viewer";
-            imageForm.ShowDialog(); // Show the image form
+            imageForm.ShowDialog(); 
         }
         
         private void ShowAnimatedGif(string gifPath)
@@ -191,12 +187,11 @@ namespace InteractiveBook
             Form gifForm = new Form();
             PictureBox gifBox = new PictureBox
             {
-                Image = Image.FromFile(gifPath), // Load the GIF
+                Image = Image.FromFile(gifPath), 
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 Dock = DockStyle.Fill
             };
 
-            // Ensure the GIF animation loops continuously
             ImageAnimator.Animate(gifBox.Image, (o, e) =>
             {
                 gifBox.Invalidate();
@@ -216,20 +211,10 @@ namespace InteractiveBook
         private void HighlightWord(string word, Color color)
         {
             int startIndex = 0;
-
             while ((startIndex = rtb2.Text.IndexOf(word, startIndex)) != -1)
             {
-                // Check if the word is at a word boundary
-                bool isBoundaryBefore = (startIndex == 0) || !char.IsLetterOrDigit(rtb2.Text[startIndex - 1]);
-                bool isBoundaryAfter = (startIndex + word.Length == rtb2.Text.Length) || !char.IsLetterOrDigit(rtb2.Text[startIndex + word.Length]);
-
-                // If it's a whole word, highlight it
-                if (isBoundaryBefore && isBoundaryAfter)
-                {
-                    rtb2.Select(startIndex, word.Length);
-                    rtb2.SelectionColor = color;
-                }
-
+                rtb2.Select(startIndex, word.Length);
+                rtb2.SelectionColor = color;
                 startIndex += word.Length;
             }
         }
@@ -238,7 +223,7 @@ namespace InteractiveBook
         {
             Graphics g = e.Graphics;
 
-            Color shadowColor = Color.FromArgb(50, 0, 0, 0); // Transparent black
+            Color shadowColor = Color.FromArgb(50, 0, 0, 0); 
 
             using (Pen pen = new Pen(Color.Black))
             {
@@ -258,52 +243,41 @@ namespace InteractiveBook
             }
 
 
-
-            // Starting and ending points for the shadow line
             int startX3 = 50;
             int startY3 = this.ClientSize.Height;
             int endX3 = 0;
             int endY3 = this.ClientSize.Height - 50;
 
-            // Draw multiple lines with offsets to simulate a blur
-            for (int i = 0; i < 10; i++) // 10 lines for the blur effect
+            for (int i = 0; i < 10; i++) 
             {
-                using (Pen shadowPen = new Pen(Color.FromArgb(50 - i * 5, 0, 0, 0), 1)) // Gradually reduce opacity
+                using (Pen shadowPen = new Pen(Color.FromArgb(50 - i * 5, 0, 0, 0), 1)) 
                 {
-                    // Slightly offset each line
                     g.DrawLine(
                         shadowPen,
-                        new Point(startX3, startY3 - i), // Offset start point
-                        new Point(endX3 + i, endY3)     // Offset end point
-                    );
+                        new Point(startX3, startY3 - i), 
+                        new Point(endX3 + i, endY3)                         );
                 }
             }
             
             PictureBox pictureBox1 = new PictureBox
             {
                 Image = Image.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\left-arrow.png"), // Path to the icon
-                SizeMode = PictureBoxSizeMode.StretchImage, // Adjust size to fit
-                Size = new System.Drawing.Size(18, 18), // Set appropriate size for the icon
-                Location = new System.Drawing.Point(25, this.ClientSize.Height - 45), // Correct positioning
-                Cursor = Cursors.Hand, // Indicate interactivity
-                BackColor = Color.Transparent // Seamless appearance
-            };
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new System.Drawing.Size(18, 18), 
+                Location = new System.Drawing.Point(25, this.ClientSize.Height - 45), 
+                Cursor = Cursors.Hand, 
+                BackColor = Color.Transparent             };
 
-
-            // Add the click event
             pictureBox1.Click += PictureBox_Click1;
 
-            // Add the PictureBox to the form
             this.Controls.Add(pictureBox1);
         }
         
         private void PictureBox_Click1(object sender, EventArgs e)
         {
-            // Navigate to Form2 on click
             Form2 form2 = new Form2();
             form2.Show();
 
-            // Optionally hide or close the current form
             this.Hide();
         }
     }

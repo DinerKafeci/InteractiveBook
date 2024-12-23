@@ -187,7 +187,7 @@ namespace InteractiveBook
         private void HighlightWord(string word, Color color)
         {
             int startIndex = 0;
-            while ((startIndex = rtb1.Text.IndexOf(word, startIndex)) != -1)
+            while ((startIndex = rtb1.Text.IndexOf(word, startIndex, StringComparison.OrdinalIgnoreCase)) != -1)
             {
                 rtb1.Select(startIndex, word.Length);
                 rtb1.SelectionColor = color;

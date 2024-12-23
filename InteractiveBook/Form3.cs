@@ -207,18 +207,26 @@ namespace InteractiveBook
             gifForm.Size = new Size(350, 350);
             gifForm.ShowDialog();
         }
-        
+
         private void HighlightWord(string word, Color color)
         {
             int startIndex = 0;
-            while ((startIndex = rtb2.Text.IndexOf(word, startIndex)) != -1)
+
+            while ((startIndex = rtb2.Text.IndexOf(word, startIndex, StringComparison.OrdinalIgnoreCase)) != -1)
             {
-                rtb2.Select(startIndex, word.Length);
-                rtb2.SelectionColor = color;
+                bool isBoundaryBefore = (startIndex == 0) || !char.IsLetterOrDigit(rtb2.Text[startIndex - 1]);
+                bool isBoundaryAfter = (startIndex + word.Length == rtb2.Text.Length) || !char.IsLetterOrDigit(rtb2.Text[startIndex + word.Length]);
+
+                if (isBoundaryBefore && isBoundaryAfter)
+                {
+                    rtb2.Select(startIndex, word.Length);
+                    rtb2.SelectionColor = color;
+                }
+
                 startIndex += word.Length;
             }
         }
-        
+
         private void Form3_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;

@@ -79,7 +79,7 @@ namespace InteractiveBook
             }
             else if (clickedWord == "cupboard")
             {
-                ShowImage(@"C:\Users\Hilal Saban\Downloads\cupboard.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\cupboard.png");
             }
             else if (clickedWord == "jar")
             {
@@ -88,7 +88,7 @@ namespace InteractiveBook
             }
             else if (clickedWord == "honey")
             {
-                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\jar.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\honey.png");
             }
             if (clickedWord == "Animation1")
             { 
@@ -104,7 +104,7 @@ namespace InteractiveBook
             }
             else if (clickedWord == "forest")
             {
-                ShowImage(@"C:\Users\Hilal Saban\Downloads\forest.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\forest.png");
             }
             else if (clickedWord == "beehive")
             {
@@ -112,7 +112,7 @@ namespace InteractiveBook
             }
             else if (clickedWord == "tree")
             {
-                ShowImage(@"C:\Users\Hilal Saban\Downloads\tree.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\forest.png");
             }
             else if (clickedWord == "bee")
             {

@@ -88,11 +88,10 @@ namespace InteractiveBook
             }
             else if (clickedWord == "cupboard")
             {
-                ShowImage(@"C:\Users\Hilal Saban\Downloads\cupboard.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\cupboard.png");
             }
             else if (clickedWord == "jar")
             {
-                
                 ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\jar.jpg");
             }
             else if (clickedWord == "honey")
@@ -113,7 +112,7 @@ namespace InteractiveBook
             }
             else if (clickedWord == "forest")
             {
-                ShowImage(@"C:\Users\Asus\Downloads\book (1)\book\book\a.jungle.jpg");
+                ShowImage(@"C:\Users\Asus\Downloads\InteractiveBook\InteractiveBook\InteractiveBook\Media\forest.png");
             }
             else if (clickedWord == "eyes")
             {

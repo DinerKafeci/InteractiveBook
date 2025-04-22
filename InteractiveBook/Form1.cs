@@ -28,6 +28,8 @@ namespace InteractiveBook
         {
             Graphics g = e.Graphics;
 
+
+
             g.DrawImage(Bitmap.FromFile("C:\\Users\\Asus\\Downloads\\InteractiveBook\\InteractiveBook\\InteractiveBook\\Media\\bearandbee.PNG"), new Rectangle(0, 0, this.ClientSize.Width - 50, this.ClientSize.Height));
 
 
